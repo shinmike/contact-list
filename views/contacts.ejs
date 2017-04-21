@@ -1,0 +1,21 @@
+ <html>
+  <head>
+    <title>Contact List</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/assets/contact-list.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Contact List</h1>
+      <form>
+        <input type="text" name="contact" placeholder="Add new contact..." required />
+        <button type="submit">Add contact</button>
+      </form>
+      <ul>
+        <% for (var i = 0; i < contacts.length; i++){ %>
+          <li><%= contacts[i].name %></li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+ </html>
