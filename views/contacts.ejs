@@ -13,7 +13,9 @@
       </form>
       <ul>
         <% for (var prop in contacts){ %>
-          <li><%= contacts[prop].firstName %></li>
+          <h3><%= contacts[prop].firstName + " " + contacts[prop].lastName %></h3>
+          <li><%= contacts[prop].email %></li>
+          <li><%= contacts[prop].phoneNumber %></li>
         <% } %>
       </ul>
     </div>
