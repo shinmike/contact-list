@@ -1,12 +1,12 @@
 var bodyParser = require('body-parser');
 
-var data = [
-{name: 'Kobe Bryant'},
-{name: 'Lebron James'},
-{name: 'Kyle Lowry'}
-];
+var urlencodedParser = bodyParser.urlencoded({extended: true});
 
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+var data = [
+{firstName: 'Kobe', lastName: 'Bryant', email: "kobe@nba.com", phoneNumber: "6041111111"},
+{firstName: 'Lebron', lastName: 'James', email: "lebron@nba.com", phoneNumber: "6042222222"},
+{firstName: 'Kyle', lastName: 'Lowry', email: "kyle@nba.com", phoneNumber: "6043333333"}
+];
 
 module.exports = function(app){
 

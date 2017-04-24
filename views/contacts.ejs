@@ -12,8 +12,8 @@
         <button type="submit">Add contact</button>
       </form>
       <ul>
-        <% for (var i = 0; i < contacts.length; i++){ %>
-          <li><%= contacts[i].name %></li>
+        <% for (var prop in contacts){ %>
+          <li><%= contacts[prop].firstName %></li>
         <% } %>
       </ul>
     </div>
