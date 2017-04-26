@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+      <title>Contact</title>
+   </head>
+   <body>
+      <header>
+         <% include ./partials/_header %>
+      </header>
+      <h2>Contact info for id: <%= contactsOne.id %></h2>
+         <ul>
+            <h3><strong><%= contactsOne.firstName + " " + contactsOne.lastName %></strong></h3>
+            <li><%= contactsOne.id %></li>
+            <li><%= contactsOne.email %></li>
+            <li><%= contactsOne.phoneNumber %></li>
+        </ul>
+        <form action="/contacts/<%= contactsOne.id %>/edit">
+          <input type="submit" value="Edit" class="btn btn-default"/>
+        </form>
+        <form action="/contacts/<%= contactsOne.id %>/delete" method="POST">
+          <input type="submit" value="Delete" class="btn btn-default"/>
+        </form>
+   </body>
+</html>

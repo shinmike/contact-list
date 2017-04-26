@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+    <title>Contact Edit</title>
+  </head>
+  <body>
+    <header>
+      <% include ./partials/_header %>
+    </header>
+    <h2>Update contact info for <%= contactsOne.id %></h2>
+    <form action="/contacts/<%= contactsOne.id %>/edit" method="POST">
+      First Name: <input type="text" name="firstName" required/><br>
+      Last Name: <input type="text" name="lastName" required/><br>
+      Email: <input type="email" name="email" /><br>
+      Phone Number: <input type="tel" name="phoneNumber" /><br>
+      <button type="submit">Update contact</button>
+    </form>
+  </body>
+</html>
