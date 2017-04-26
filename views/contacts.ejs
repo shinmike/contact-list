@@ -1,23 +1,30 @@
- <html>
+<!DOCTYPE html>
+<html>
   <head>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
     <title>Contact List</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="/assets/contact-list.js"></script>
   </head>
   <body>
-    <div>
-      <h1>Contact List</h1>
-      <form>
-        <input type="text" name="contact" placeholder="Add new contact..." required />
-        <button type="submit">Add contact</button>
-      </form>
-      <ul>
-        <% for (var prop in contacts){ %>
-          <p><strong><%= contacts[prop].firstName + " " + contacts[prop].lastName %></strong></p>
-          <li><%= contacts[prop].email %></li>
-          <li><%= contacts[prop].phoneNumber %></li>
-        <% } %>
-      </ul>
-    </div>
+    <header>
+      <% include ./partials/_header %>
+    </header>
+    <h2>Current contacts</h2>
+    <ul>
+      <% for (var prop in contacts){ %>
+        <h3><strong><%= contacts[prop].firstName + " " + contacts[prop].lastName %></strong></h3>
+        <li>id: <%= contacts[prop].id %></li>
+        <form action="/contacts/<%= contacts[prop].id %>">
+            <input type="submit" value="See more" class="btn btn-default"/>
+        </form><br>
+      <% } %>
+    </ul>
+    <h2>Add new contact</h2>
+    <form action="/contacts" method="POST">
+      First Name: <input type="text" name="firstName" required/><br>
+      Last Name: <input type="text" name="lastName" required/><br>
+      Email: <input type="email" name="email" /><br>
+      Phone Number: <input type="tel" name="phoneNumber" /><br>
+      <button type="submit">Submit</button>
+    </form>
   </body>
- </html>
+</html>
